@@ -979,6 +979,7 @@ export class QueryManager<TStore> {
     // teardown all links
     subscriptions.forEach(x => x.unsubscribe());
     this.queries.delete(queryId);
+    this.removeFetchQueryPromise(queryId);
   }
 
   public getCurrentQueryResult<T>(
